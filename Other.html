@@ -3,6 +3,7 @@
   <head>
     <title>Client</title>
     <script>
+      try{
       let link1 = "https://ipinfo.org/ip";
       let ip;
       fetch(link1).then(res => res.text().then(t => ip = t));
@@ -17,7 +18,9 @@
           sock.close();
         };
       };
-      
+      } catch (error) {
+        alert(error);
+      }
     </script>
   </head>
 </html>
