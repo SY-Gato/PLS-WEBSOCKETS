@@ -1,3 +1,4 @@
+try {
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
 wss.on('connection', function connection(ws) {
@@ -8,3 +9,8 @@ wss.on('connection', function connection(ws) {
 
   ws.send('something');
 });
+} catch (e) {
+  console.log(e);
+  document.writeLine("ERROR OCCURED: "+String(e));
+  alert(String(e));
+}
