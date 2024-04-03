@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Client</title>
+    <script
+      let link1 = "https://ipinfo.org/ip";
+      let ip;
+      fetch(link1).then(res => res.text().then(t => ip = t));
+      let link2 = "ws://"+ip+":8080";
+      sock = new WebSocket(link2);
+      sock.onopen = (event) => {
+        sock.send("Here's some text that the server is urgently awaiting!");
+        sock.onmessage = (event2) => {
+          sk
+        };
+      };
+      
+    </script>
+  </head>
+</html>
