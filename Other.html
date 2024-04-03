@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Client</title>
-    <script
+    <script>
       let link1 = "https://ipinfo.org/ip";
       let ip;
       fetch(link1).then(res => res.text().then(t => ip = t));
@@ -11,7 +11,10 @@
       sock.onopen = (event) => {
         sock.send("Here's some text that the server is urgently awaiting!");
         sock.onmessage = (event2) => {
-          sk
+          console.log(event2.data);
+          document.writeLine(event2.data);
+          alert(event2.data);
+          sock.close();
         };
       };
       
